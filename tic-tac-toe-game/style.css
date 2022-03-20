@@ -1,0 +1,86 @@
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	padding: 50px;
+}
+.wrapper-settings {
+	display: flex;
+	flex-direction: column;
+	row-gap: 15px;
+}
+
+table {
+	border-collapse: collapse;
+	border: 8px solid white;
+	margin-top: 30px;
+}
+td,
+th {
+	animation: borderForTable 2s ease-in-out;
+	border: 7px solid #afeeee;
+	cursor: pointer;
+}
+td {
+	transition: background-color 0.7s;
+	width: 120px;
+	height: 120px;
+}
+td:hover {
+	background-color: rgba(175, 238, 238, 0.5);
+}
+
+.start-game,
+.count-for-win {
+	display: flex;
+	column-gap: 15px;
+	align-items: center;
+}
+input {
+	width: 40px;
+}
+
+button {
+	cursor: pointer;
+}
+
+@keyframes borderForTable {
+	from {
+		border: 1px solid #afeeee;
+	}
+	to {
+		border: 7px solid #afeeee;
+	}
+}
+
+.circle {
+	width: 100%;
+	height: 100%;
+	stroke-dasharray: 283;
+	stroke-dashoffset: 283;
+	animation: draw 1s forwards;
+}
+.cross {
+	width: 100%;
+	height: 100%;
+}
+.first {
+	stroke-dasharray: 125;
+	stroke-dashoffset: 125;
+	animation: draw 0.6s forwards;
+}
+.second {
+	stroke-dasharray: 125;
+	stroke-dashoffset: 125;
+	animation: draw 0.6s 0.6s forwards;
+}
+@keyframes draw {
+	100% {
+		stroke-dashoffset: 0;
+	}
+}
